@@ -19,5 +19,11 @@
 
 
 // Code of app.js
-const catMe = require("cat-me")
-console.log(catMe())
+// const catMe = require("cat-me")
+// console.log(catMe())
+
+
+// Here we learn How to create a server using express.
+const express = require("express")
+const app = express() //Here we created the server
+app.listen(3000) //Here we started the server
