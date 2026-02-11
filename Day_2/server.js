@@ -14,3 +14,7 @@ app.get('/home',(req,res) => {
 })
 
 app.listen(3000)
+// we can also write this with a callback
+app.listen(3000, ()=>{
+  console.log("Server is running on port 3000") // you can see this line in Terminal
+})
