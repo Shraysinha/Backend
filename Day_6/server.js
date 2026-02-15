@@ -1,17 +1,36 @@
+// We are importing the app (Express server) from the src/app file
 const app = require("./src/app")
 
-
+// We are importing mongoose
+// Mongoose helps us connect Node.js with MongoDB
 const mongoose = require("mongoose")
 
+// This function is used to connect our server to the database
 function connectToDb(){
-  //we can copy this URL from MongoDb compass > In your database cohort > click on 3 dot and then copy the connection string 
-  mongoose.connect("mongodb+srv://shraypriyadarshi_db_user:hNfnqzmh1awW4XWO@cluster0.gjz6ze6.mongodb.net/Day-6")//this URI was connecting our mongoDb with the cluster , but we have to connect with database so at end of this URL after "/" write any file name , ex: Day-6 , if mongoDb find that there is no file created with this name then it create a new Database with this name.
-  .then (()=>{
-    console.log("Conected to Database")
-  }) 
+
+  // mongoose.connect() is used to connect MongoDB with our project
+  // This URL is called a connection string
+  // We usually copy it from MongoDB Compass or MongoDB Atlas
+  mongoose.connect(
+    "mongodb+srv://shraypriyadarshi_db_user:hNfnqzmh1awW4XWO@cluster0.gjz6ze6.mongodb.net/Day-6"
+  )
+
+  // If the database connection is successful
+  // then this .then() block will run
+  .then(() => {
+
+    // This message will be shown in the terminal
+    console.log("Connected to Database")
+  })
 }
+
+// We are calling the function so that database connection actually happens
 connectToDb()
 
-app.listen(3000,()=>{
+// This starts the server on port 3000
+// The callback runs once when the server starts
+app.listen(3000, () => {
+
+  // This message will appear in the terminal
   console.log("Server started")
 })
