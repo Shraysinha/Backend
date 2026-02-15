@@ -12,7 +12,11 @@ function connectToDb(){
   // This URL is called a connection string
   // We usually copy it from MongoDB Compass or MongoDB Atlas
   mongoose.connect(
+<<<<<<< HEAD
     "/Day-6" // Here write the URL
+=======
+    "/Day-6"
+>>>>>>> 5344409664c7e1ac1ab939fc06d033fd8334da0d
   )
 
   // If the database connection is successful
